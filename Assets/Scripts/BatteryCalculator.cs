@@ -33,8 +33,9 @@ public class BatteryCalculator : MonoBehaviour
     
     }
 
-    void getBatteryFull(){
+    public void setBatteryFull(){
         batterylevel = 100;
+        light.intensity = (float)(batterylevel*0.1);
         GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString();
     }
 }

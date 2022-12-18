@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickBattery : MonoBehaviour
@@ -8,10 +9,11 @@ public class PickBattery : MonoBehaviour
     public LayerMask mask;
     public Material highlightMaterial;
 
+    private BatteryCalculator batteryCalculator;
     // Start is called before the first frame update
     void Start()
     {
-
+        batteryCalculator = GameObject.Find("BaterryText").GetComponent<BatteryCalculator>();
     }
 
     // Update is called once per frame
@@ -24,23 +26,28 @@ public class PickBattery : MonoBehaviour
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
             var objectDetected = hitInfo.collider;
-            if (objectDetected != null){
+            if (objectDetected != null)
+            {
                 highlightMaterial = objectDetected.GetComponent<MeshRenderer>().material;
                 highlightMaterial.EnableKeyword("_EMISSION");
                 highlightMaterial.SetColor("_EmissionColor", Color.yellow);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    batteryCalculator.setBatteryFull();
+                    objectDetected.transform.gameObject.SetActive(false);
+                }
             }
-            
+
 
         }
         else
         {
-            if(highlightMaterial!=null){
+            if (highlightMaterial != null)
+            {
                 highlightMaterial.DisableKeyword("_EMISSION");
                 highlightMaterial.SetColor("_EmissionColor", Color.black);
                 highlightMaterial = null;
-                Debug.DrawLine(ray.origin, ray.origin+ray.direction * 5, Color.green);
             }
-                
         }
     }
 }
