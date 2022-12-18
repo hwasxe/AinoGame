@@ -23,8 +23,8 @@ public class BatteryCalculator : MonoBehaviour
     void Update()
     {
         CurrentTime += Time.deltaTime;
-        if(CurrentTime > 4){
-            batterylevel = batterylevel - 1;
+        if(CurrentTime > 4 && batterylevel>0){
+            batterylevel = batterylevel - 10;
             light.intensity = (float)(batterylevel*0.1);
             GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString();
 
