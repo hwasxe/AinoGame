@@ -31,13 +31,14 @@ public class PickBattery : MonoBehaviour
                 highlightMaterial = objectDetected.GetComponent<MeshRenderer>().material;
                 highlightMaterial.EnableKeyword("_EMISSION");
                 highlightMaterial.SetColor("_EmissionColor", Color.yellow);
+                
+                
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    batteryCalculator.setBatteryFull();
+                    batteryCalculator.increaseBatteryNumber();
                     objectDetected.transform.gameObject.SetActive(false);
                 }
             }
-
 
         }
         else
@@ -48,6 +49,20 @@ public class PickBattery : MonoBehaviour
                 highlightMaterial.SetColor("_EmissionColor", Color.black);
                 highlightMaterial = null;
             }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (batteryCalculator.getBatteryNumber() > 0)
+            {
+                batteryCalculator.setBatteryFull();
+                batteryCalculator.decreaseBatteryNumber();
+            }
+            else
+            {
+                        //Here we can make error noice because not enough battery
+            }
+
         }
     }
 }

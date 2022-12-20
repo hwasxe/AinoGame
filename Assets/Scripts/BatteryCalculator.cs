@@ -8,13 +8,14 @@ public class BatteryCalculator : MonoBehaviour
        
     public GameObject txt;
     public GameObject spotlight;
-    float batterylevel = 50;
+    float batterylevel = 100;
+    int batteryNumber = 0;
 
     private Light light;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString();
+        updateTextShown();
         light = spotlight.GetComponent<Light>();
         light.intensity = 5;
     }
@@ -24,9 +25,9 @@ public class BatteryCalculator : MonoBehaviour
     {
         CurrentTime += Time.deltaTime;
         if(CurrentTime > 4 && batterylevel>0){
-            batterylevel = batterylevel - 10;
+            batterylevel = batterylevel - 5;
             light.intensity = (float)(batterylevel*0.1);
-            GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString();
+            updateTextShown();
 
             CurrentTime = 0;
         }
@@ -36,6 +37,28 @@ public class BatteryCalculator : MonoBehaviour
     public void setBatteryFull(){
         batterylevel = 100;
         light.intensity = (float)(batterylevel*0.1);
-        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString();
+        updateTextShown();
+    }
+
+    public void increaseBatteryNumber()
+    {
+        batteryNumber++;
+        updateTextShown();
+    }
+    public void decreaseBatteryNumber()
+    {
+        batteryNumber--;
+        updateTextShown();
+    }
+
+    public int getBatteryNumber()
+    {
+        return batteryNumber;
+    }
+
+    public void updateTextShown()
+    {
+        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString()+"\nBattery Number: "+batteryNumber.ToString()+("\n(Press R to reload)");
+
     }
 }
