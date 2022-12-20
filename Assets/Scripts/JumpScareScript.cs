@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sfaceScript : MonoBehaviour
+public class JumpScareScript : MonoBehaviour
 {
 
     public GameObject sface;

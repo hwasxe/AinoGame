@@ -11,7 +11,7 @@ public class BatteryCalculator : MonoBehaviour
     float batterylevel = 100;
     int batteryNumber = 0;
 
-    private Light light;
+    private new Light light;
     // Start is called before the first frame update
     void Start()
     {
