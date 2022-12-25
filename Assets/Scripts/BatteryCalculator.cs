@@ -5,7 +5,7 @@ using UnityEngine;
 public class BatteryCalculator : MonoBehaviour
 {
     float CurrentTime;
-       
+    private GameObject batteryForeGroundBar;
     public GameObject txt;
     public GameObject spotlight;
     float batterylevel = 100;
@@ -15,7 +15,10 @@ public class BatteryCalculator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        updateTextShown();
+        batteryForeGroundBar = GameObject.Find("BatteryForeGround");
+        
+        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery Number: "+batteryNumber.ToString()+("\n(Press R to reload)\nBattery level: %"+ batterylevel.ToString());
+        batteryForeGroundBar.transform.localScale = new Vector3((float)0.99, (float)0.9, 0);
         light = spotlight.GetComponent<Light>();
         light.intensity = 5;
     }
@@ -25,19 +28,20 @@ public class BatteryCalculator : MonoBehaviour
     {
         CurrentTime += Time.deltaTime;
         if(CurrentTime > 4 && batterylevel>0){
-            batterylevel = batterylevel - 5;
+            batterylevel = batterylevel - 10;
             light.intensity = (float)(batterylevel*0.1);
             updateTextShown();
-
             CurrentTime = 0;
         }
+        
     
     }
 
     public void setBatteryFull(){
         batterylevel = 100;
         light.intensity = (float)(batterylevel*0.1);
-        updateTextShown();
+        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery Number: "+batteryNumber.ToString()+("\n(Press R to reload)\nBattery level: %"+ batterylevel.ToString());
+        batteryForeGroundBar.transform.localScale = new Vector3((float)0.99, (float)0.9, 0);
     }
 
     public void increaseBatteryNumber()
@@ -58,7 +62,8 @@ public class BatteryCalculator : MonoBehaviour
 
     public void updateTextShown()
     {
-        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery level: "+ batterylevel.ToString()+"\nBattery Number: "+batteryNumber.ToString()+("\n(Press R to reload)");
+        GetComponent<TMPro.TextMeshProUGUI>().text = "Battery Number: "+batteryNumber.ToString()+("\n(Press R to reload)\nBattery level: %"+ batterylevel.ToString());
+        batteryForeGroundBar.transform.localScale = new Vector3(batterylevel*(float)0.01, (float)0.9, 0);
 
     }
 }

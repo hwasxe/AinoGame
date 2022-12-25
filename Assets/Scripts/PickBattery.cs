@@ -11,10 +11,12 @@ public class PickBattery : MonoBehaviour
     public Material highlightMaterial;
 
     private BatteryCalculator batteryCalculator;
+
     // Start is called before the first frame update
     void Start()
     {
-        batteryCalculator = GameObject.Find("BaterryText").GetComponent<BatteryCalculator>();
+        batteryCalculator = GameObject.Find("BatteryBar").GetComponent<BatteryCalculator>();
+        
     }
 
     // Update is called once per frame
