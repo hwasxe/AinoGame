@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -30,7 +31,7 @@ public class PickBattery : MonoBehaviour
             {
                 highlightMaterial = objectDetected.GetComponent<MeshRenderer>().material;
                 highlightMaterial.EnableKeyword("_EMISSION");
-                highlightMaterial.SetColor("_EmissionColor", Color.yellow);
+                highlightMaterial.SetColor("_EmissionColor", Color.gray);
                 
                 
                 if (Input.GetKeyDown(KeyCode.E))
