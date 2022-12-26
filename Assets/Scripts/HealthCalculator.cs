@@ -13,16 +13,18 @@ public class HealthCalculator : MonoBehaviour
     void Start()
     {
         healthForeGroundBar = GameObject.Find("HealthForeGround");
-        GetComponent<TMPro.TextMeshProUGUI>().text = "\nFirst-Aid-Kit Number: "+firstAidNumber.ToString()+("\nHealth: %"+ healthlevel.ToString());
+        GetComponent<TMPro.TextMeshProUGUI>().text = "First-Aid-Kit Number: "+firstAidNumber.ToString()+"\n(Press H to use)"+("\nHealth: %"+ healthlevel.ToString());
         healthForeGroundBar.transform.localScale = new Vector3((float)0.99, (float)0.9, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (healthlevel <= 0)
         {
             //Ölme Kodu Buraya yazılacak. Yere düşme animasyonu oluştur
+            Debug.Log("You Died!");
         }
 
         
@@ -31,7 +33,7 @@ public class HealthCalculator : MonoBehaviour
 
     public void setHealthFull(){
         healthlevel = 100;
-        GetComponent<TMPro.TextMeshProUGUI>().text = "\nFirst-Aid-Kit Number: "+firstAidNumber.ToString()+("\nHealth level: %"+ healthlevel.ToString());
+        GetComponent<TMPro.TextMeshProUGUI>().text = "First-Aid-Kit Number: "+firstAidNumber.ToString()+"\n(Press H to use)"+("\nHealth level: %"+ healthlevel.ToString());
         healthForeGroundBar.transform.localScale = new Vector3((float)0.99, (float)0.9, 0);
     }
     public void getDamageStrong()
@@ -71,7 +73,7 @@ public class HealthCalculator : MonoBehaviour
 
     public void updateTextShown()
     {
-        GetComponent<TMPro.TextMeshProUGUI>().text = "\nFirst-Aid-Kit Number: "+firstAidNumber.ToString()+("\nHealth level: %"+ healthlevel.ToString());
+        GetComponent<TMPro.TextMeshProUGUI>().text = "First-Aid-Kit Number: "+firstAidNumber.ToString()+"\n(Press H to use)"+("\nHealth level: %"+ healthlevel.ToString());
         healthForeGroundBar.transform.localScale = new Vector3(healthlevel*(float)0.01, (float)0.9, 0);
 
     }
