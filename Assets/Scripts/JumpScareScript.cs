@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class JumpScareScript : MonoBehaviour
 {
-
+    private HealthCalculator healthCalculator;
     public GameObject sface;
     // Start is called before the first frame update
     void Start()
     {
+        healthCalculator = GameObject.Find("HealthBar").GetComponent<HealthCalculator>();
         sface.SetActive(false);
     }
 
@@ -23,6 +24,7 @@ public class JumpScareScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            healthCalculator.getDamageNormal();
             sface.SetActive(true);
             StartCoroutine(TimerStart());
         }
