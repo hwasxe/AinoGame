@@ -50,7 +50,7 @@ public class PickItem : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("You got the Main Dor Key! Now you can open the Main door...");
-                        GameObject.Find("MainDoor").GetComponent<DoorController>().SetKeyTakenTrue();
+                        GameObject.Find("MainDoor").GetComponent<KeyDoorController>().SetKeyTakenTrue();
                         objectDetected.transform.gameObject.SetActive(false);
                     }
                     
