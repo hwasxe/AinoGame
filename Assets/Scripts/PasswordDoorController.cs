@@ -16,7 +16,6 @@ public class PasswordDoorController : MonoBehaviour
 
     private void Start()
     {
-        KeyPad = gameObject.transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         audioSource.Stop();
@@ -32,10 +31,10 @@ public class PasswordDoorController : MonoBehaviour
                 Debug.Log("Touched Door with E");
                 if (Input.GetKeyDown(KeyCode.E) && !isDoorOpen)
                 {
+                    KeyPad = hit.transform.GetChild(0).gameObject;
                     KeyPad.SetActive(true);
                 }
             }
-            
         }
     }
 
@@ -45,7 +44,6 @@ public class PasswordDoorController : MonoBehaviour
         audioSource.PlayOneShot(OpenDoorSound,10);
         animator.Play("door_open",0,0.0f);
         isDoorOpen = true;
+    
     }
-    
-    
 }
