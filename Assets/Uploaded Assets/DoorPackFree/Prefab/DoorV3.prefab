@@ -346,7 +346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  KeyPad: {fileID: 4556471320899766611}
   OpenDoorSound: {fileID: 8300000, guid: 8ed2d6c518bc12e418c34a2b4649a6b2, type: 3}
 --- !u!1001 &1572825177
 PrefabInstance:
@@ -482,12 +481,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d331ad07dd6844540883a59f0b6311c0, type: 3}
---- !u!1 &4556471320899766611 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4556471319880999178, guid: d331ad07dd6844540883a59f0b6311c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1572825177}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4556471320899766615 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4556471319880999182, guid: d331ad07dd6844540883a59f0b6311c0,

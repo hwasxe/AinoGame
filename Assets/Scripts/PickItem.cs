@@ -40,6 +40,7 @@ public class PickItem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You got 1 Battery ",4);
                         batteryCalculator.increaseBatteryNumber();
                         objectDetected.transform.gameObject.SetActive(false);
                     }
@@ -49,7 +50,7 @@ public class PickItem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("You got the Main Dor Key! Now you can open the Main door...");
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You got the Main Dor Key! Now you can open the Main door...",5);
                         GameObject.Find("MainDoor").GetComponent<KeyDoorController>().SetKeyTakenTrue();
                         objectDetected.transform.gameObject.SetActive(false);
                     }
@@ -60,8 +61,19 @@ public class PickItem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You got First-Aid-Kit",4);
                         GameObject.Find("HealthBar").GetComponent<HealthCalculator>().increaseFirstAidNumber();
                         objectDetected.transform.gameObject.SetActive(false);
+                    }
+                    
+                }
+                
+                if (hitInfo.transform.gameObject.CompareTag("ClipBoard"))
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().ShowPage("After the queen's battle destroyed nearly everything.\nKing's come face to face for a final battle against each other." +
+                            "\nOne side is protected by a white heroic horse,\nwhile the other side attacks with black bishop and a pitch black rook\nAll of a sudden white king, illuminating the darkness of the night, comes to reverse the events");
                     }
                     
                 }

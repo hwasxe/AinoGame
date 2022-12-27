@@ -10,6 +10,8 @@ TagManager:
   - MainDoorKey
   - FirstAidKit
   - PasswordDoor
+  - Cabinet
+  - ClipBoard
   layers:
   - Default
   - TransparentFX
