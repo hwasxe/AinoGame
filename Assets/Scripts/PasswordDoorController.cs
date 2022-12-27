@@ -11,11 +11,12 @@ public class PasswordDoorController : MonoBehaviour
     public Camera camera;
     private bool isDoorOpen = false;
     private AudioSource audioSource;
-    public GameObject KeyPad;
+    private GameObject KeyPad;
     public AudioClip OpenDoorSound;
 
     private void Start()
     {
+        KeyPad = gameObject.transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         audioSource.Stop();
@@ -31,7 +32,6 @@ public class PasswordDoorController : MonoBehaviour
                 Debug.Log("Touched Door with E");
                 if (Input.GetKeyDown(KeyCode.E) && !isDoorOpen)
                 {
-                    Debug.Log("Activate KeyPad");
                     KeyPad.SetActive(true);
                 }
             }

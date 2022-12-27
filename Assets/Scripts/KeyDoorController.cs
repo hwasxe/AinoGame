@@ -43,7 +43,7 @@ public class KeyDoorController : MonoBehaviour
                     }
                     else
                     {
-                        //Make sound and print that key is not taken !!!
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You do not have the main door key!\nLook around the house....",5);
                     }
                     
                 }

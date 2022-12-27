@@ -28,8 +28,7 @@ public class KeyPadController : MonoBehaviour
     void Start()
     {
         
-        inputObject = GameObject.Find("Input");
-        inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = "Password...";
+        gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = "Password...";
         button1 = gameObject.transform.GetChild(1).GetComponent<Button>();
         button2 = gameObject.transform.GetChild(2).GetComponent<Button>();
         button3 = gameObject.transform.GetChild(3).GetComponent<Button>();
@@ -72,7 +71,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "1";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -82,7 +81,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "2";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -92,7 +91,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "3";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -102,7 +101,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "4";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -112,7 +111,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "5";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -122,7 +121,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "6";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -132,7 +131,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "7";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -142,7 +141,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "8";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -152,7 +151,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "9";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -162,7 +161,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length < MaxInputLength)
         {
             input = input + "0";
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
@@ -171,6 +170,7 @@ public class KeyPadController : MonoBehaviour
     {
         if (input.Equals(Password.ToString()))
         {
+            Debug.Log("PASSWORD IS CORRECT");
             Door.GetComponent<PasswordDoorController>().OpenDoor();
             gameObject.SetActive(false);
         }
@@ -185,7 +185,7 @@ public class KeyPadController : MonoBehaviour
         if (input.Length > 0)
         {
             input = input.Remove(input.Length - 1);
-            inputObject.GetComponent<TMPro.TextMeshProUGUI>().text = input;
+            gameObject.transform.GetChild(14).GetComponent<TMPro.TextMeshProUGUI>().text = input;
         }
         
     }
