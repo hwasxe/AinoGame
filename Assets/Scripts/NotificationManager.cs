@@ -11,7 +11,6 @@ public class NotificationManager : MonoBehaviour
     void Start()
     {
         textObject = GameObject.Find("NotificationText");
-        textObject.GetComponent<TMPro.TextMeshProUGUI>().text = "";
     }
 
     // Update is called once per frame
@@ -25,7 +24,7 @@ public class NotificationManager : MonoBehaviour
 
     public void SetNotification(string notification,int duration)
     {
-        textObject.GetComponent<TMPro.TextMeshProUGUI>().text = notification;
+        GameObject.Find("NotificationText").GetComponent<TMPro.TextMeshProUGUI>().text = notification;
         StartCoroutine(ResetAfterTime(duration));
     }
 

@@ -55,13 +55,14 @@ public class MonsterChase : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (damageCoolDownTimer > 2)
-        {
-            healthCalculator.getDamageStrong();
-            damageCoolDownTimer = 0;
-        }
+        
         if(other.gameObject.tag == "Player")
         {
+            if (damageCoolDownTimer > 2)
+            {
+                healthCalculator.getDamageStrong();
+                damageCoolDownTimer = 0;
+            }
             CurrentTime = 0;
             isAttacking = true;
             animator.SetTrigger("attack");

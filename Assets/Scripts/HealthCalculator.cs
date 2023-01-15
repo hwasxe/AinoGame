@@ -38,6 +38,7 @@ public class HealthCalculator : MonoBehaviour
     }
     public void getDamageStrong()
     {
+        Debug.Log("Strong Damage is taken!!!");
         if (healthlevel > 0)
         {
             healthlevel -= 20;
@@ -47,7 +48,7 @@ public class HealthCalculator : MonoBehaviour
     }
     public void getDamageNormal()
     {
-
+        Debug.Log("Normal Damage is taken!!!");
         if (healthlevel > 0)
         {
             healthlevel -= 10;
