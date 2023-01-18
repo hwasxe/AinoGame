@@ -7,7 +7,7 @@ public class HealthCalculator : MonoBehaviour
     float CurrentTime;
     private GameObject healthForeGroundBar;
     public GameObject txt;
-    float healthlevel = 100;
+    public float healthlevel = 100;
     int firstAidNumber = 0;
     // Start is called before the first frame update
     void Start()
