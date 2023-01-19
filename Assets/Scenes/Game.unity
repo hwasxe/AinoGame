@@ -4007,7 +4007,7 @@ PrefabInstance:
     - target: {fileID: 4556471319880999217, guid: d331ad07dd6844540883a59f0b6311c0,
         type: 3}
       propertyPath: Password
-      value: 6357
+      value: 3283
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d331ad07dd6844540883a59f0b6311c0, type: 3}
@@ -14132,7 +14132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd0c9e0cc7462e4eaffcb859d668f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 8
   jumpSpeed: 4
   gravity: 10
 --- !u!54 &1575235877
