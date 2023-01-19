@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CabinetController : MonoBehaviour
 {
-    public Camera camera;
+    public new Camera camera;
 
     private bool isDoorOpen = false;
 

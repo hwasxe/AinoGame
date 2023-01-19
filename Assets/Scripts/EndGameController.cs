@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class EndGameController : MonoBehaviour
 {
     private bool endGameCondition = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You need to do .......... then leave the Valley!!! ",10);

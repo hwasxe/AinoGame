@@ -10,7 +10,8 @@ public class ESCMenu : MonoBehaviour
 {
     public static bool IsGamePaused = false;
     public GameObject pauseMenuUI;
-   
+    public GameObject endMenuUI;
+    
     public float[] charPosition;
    
     void Update()
