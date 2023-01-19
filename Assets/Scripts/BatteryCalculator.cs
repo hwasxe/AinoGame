@@ -8,8 +8,8 @@ public class BatteryCalculator : MonoBehaviour
     private GameObject batteryForeGroundBar;
     public GameObject txt;
     public GameObject spotlight;
-    float batterylevel = 100;
-    int batteryNumber = 0;
+    public float batterylevel = 100;
+    public int batteryNumber = 0;
 
     private new Light light;
     // Start is called before the first frame update
@@ -42,6 +42,16 @@ public class BatteryCalculator : MonoBehaviour
         light.intensity = (float)(batterylevel*0.1);
         GetComponent<TMPro.TextMeshProUGUI>().text = "Battery Number: "+batteryNumber.ToString()+("\n(Press R to reload)\nBattery level: %"+ batterylevel.ToString());
         batteryForeGroundBar.transform.localScale = new Vector3((float)0.99, (float)0.9, 0);
+    }
+    public void setBatteryLevel(float batteryLevel)
+    {
+        batterylevel = batteryLevel;
+        updateTextShown();
+    }
+    public void setBatteryNumber(int batteryNo)
+    {
+        batteryNumber = batteryNo;
+        updateTextShown();
     }
 
     public void increaseBatteryNumber()
