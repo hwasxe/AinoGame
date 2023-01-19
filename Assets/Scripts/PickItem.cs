@@ -77,6 +77,16 @@ public class PickItem : MonoBehaviour
                     }
                     
                 }
+                if (hitInfo.transform.gameObject.CompareTag("Laptop"))
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You got the Laptop!! You can Leave the Valley!!!",4);
+                        GameObject.Find("EndGameController").GetComponent<EndGameController>().EndTheGame();
+                        objectDetected.transform.gameObject.SetActive(false);
+                    }
+                    
+                }
                 
             }
 

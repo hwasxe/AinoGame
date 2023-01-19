@@ -8,7 +8,7 @@ public class EndGameController : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You need to do .......... then leave the Valley!!! ",10);
+        GameObject.Find("NotificationManager").GetComponent<NotificationManager>().SetNotification("You need to find your Laptop to leave the Valley!!! ",10);
         
     }
 
