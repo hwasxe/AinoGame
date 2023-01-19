@@ -28,7 +28,7 @@ public class BatteryCalculator : MonoBehaviour
     {
         CurrentTime += Time.deltaTime;
         if(CurrentTime > 4 && batterylevel>0){
-            batterylevel = batterylevel - 10;
+            batterylevel = batterylevel - 5;
             light.intensity = (float)(batterylevel*0.1);
             updateTextShown();
             CurrentTime = 0;
