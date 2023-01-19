@@ -12,6 +12,7 @@ TagManager:
   - PasswordDoor
   - Cabinet
   - ClipBoard
+  - Laptop
   layers:
   - Default
   - TransparentFX
