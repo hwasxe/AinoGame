@@ -170,8 +170,10 @@ public class KeyPadController : MonoBehaviour
     {
         if (input.Equals(Password.ToString()))
         {
+            GameObject.Find("Camera").GetComponent<MouseLook>().enabled = true;
             Debug.Log("PASSWORD IS CORRECT");
             Door.GetComponent<PasswordDoorController>().OpenDoor();
+            Cursor.visible = false;
             gameObject.SetActive(false);
         }
         else

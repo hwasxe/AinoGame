@@ -28,9 +28,12 @@ public class PasswordDoorController : MonoBehaviour
         {
             if (hit.transform.CompareTag("PasswordDoor"))
             {
+                
                 Debug.Log("Touched Door with E");
                 if (Input.GetKeyDown(KeyCode.E) && !isDoorOpen)
                 {
+                    GameObject.Find("Camera").GetComponent<MouseLook>().enabled = false;
+                    Cursor.visible = true;
                     KeyPad = hit.transform.GetChild(0).gameObject;
                     KeyPad.SetActive(true);
                 }

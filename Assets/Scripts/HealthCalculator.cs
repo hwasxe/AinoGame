@@ -29,6 +29,8 @@ public class HealthCalculator : MonoBehaviour
         {
             isDead = true;
             //END GAME DIED!!!
+            Cursor.visible = true;
+            GameObject.Find("Camera").GetComponent<MouseLook>().enabled = false;
             GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
             StartCoroutine(DeadEffect());
             

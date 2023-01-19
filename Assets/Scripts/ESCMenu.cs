@@ -20,10 +20,12 @@ public class ESCMenu : MonoBehaviour
         {
             if (IsGamePaused)
             {
+                
                 Resume();
             }
             else
             {
+                
                 Pause();
             }
         }
@@ -31,6 +33,7 @@ public class ESCMenu : MonoBehaviour
 
     public void Resume()
     {   
+        Cursor.visible = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         IsGamePaused = false;
@@ -38,6 +41,7 @@ public class ESCMenu : MonoBehaviour
 
     public void Pause()
     {   
+        Cursor.visible = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
@@ -47,6 +51,7 @@ public class ESCMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        Cursor.visible = true;
     }
 
     public void QuitGame()

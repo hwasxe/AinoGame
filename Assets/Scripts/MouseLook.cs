@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,13 @@ public class MouseLook : MonoBehaviour
     public Transform body;
     float xRot = 0f;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     private void Update() {
+        
         float rotX = Input.GetAxisRaw("Mouse X") * sens * Time.deltaTime;
         float rotY = Input.GetAxisRaw("Mouse Y") * sens * Time.deltaTime;
 
