@@ -24,6 +24,7 @@ public class EndGameController : MonoBehaviour
             if (endGameCondition)
             {
                 Time.timeScale = 1f;
+                Cursor.visible = true;
                 SceneManager.LoadScene(2);
                 
             }
