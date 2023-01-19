@@ -39,17 +39,17 @@ public class HealthCalculator : MonoBehaviour
 
     }
     
-    IEnumerator DeadEffect() //Call this method with StartCoroutine(RotateForSeconds());
+    IEnumerator DeadEffect() 
     {
-        float time = 1;     //How long will the object be rotated?
+        float time = 1;     
  
-        while(time > 0)     //While the time is more than zero...
+        while(time > 0)    
         {
             GameObject.Find("Player").transform.Rotate((Vector3.down+Vector3.right) * 10 * Time.deltaTime);
-            GameObject.Find("Player").transform.Rotate(Vector3.down+Vector3.right);    //...rotate the object.
-            time -= Time.deltaTime;     //Decrease the time- value one unit per second.
+            GameObject.Find("Player").transform.Rotate(Vector3.down+Vector3.right);    
+            time -= Time.deltaTime;   
  
-            yield return null;     //Loop the method.
+            yield return null;    
         }
         deadMenuUI.SetActive(true);
  
